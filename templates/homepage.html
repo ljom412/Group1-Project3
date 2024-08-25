@@ -1,0 +1,35 @@
+<!-- homepage.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1 Project 3 Coffee Dataset Homepage</title>
+</head>
+<body>
+    <h1>Welcome to the ICO Coffee Dataset Homepage</h1>
+    
+    <h2>Select an option:</h2>
+    <select id="dropdown">
+        <option value="exports_pie_chart">Exports Pie Chart</option>
+        <option value="test_chart">Image 2</option>
+    </select>
+    
+    <div id="result"></div>
+    
+    <!-- Display the image -->
+    <img id="imageDisplay" alt="Image">
+
+    <script>
+        const dropdown = document.getElementById('dropdown');
+        const imageDisplay = document.getElementById('imageDisplay');
+
+        dropdown.addEventListener('change', function() {
+            const selectedOption = dropdown.value;
+            // Update the image source based on the selected option
+            imageDisplay.src = `/static/images/${selectedOption}.png`;
+        });
+    </script>
+</body>
+</html>
