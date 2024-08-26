@@ -1,0 +1,90 @@
+-- Code used to create tables
+
+CREATE TABLE indicator_prices (
+    months VARCHAR NOT NULL, 
+    ICO_composite_indicator DECIMAL NOT NULL,
+	Colombian_Milds DECIMAL NOT NULL,
+	Other_Milds DECIMAL NOT NULL,
+	Brazilian_Naturals DECIMAL NOT NULL,
+	Robustas DECIMAL NOT NULL,
+	PRIMARY KEY (months)
+);
+
+CREATE TABLE imports (
+	imports VARCHAR PRIMARY KEY, 
+	"1990" DECIMAL, 
+	"1991" DECIMAL, 
+	"1992" DECIMAL, 
+	"1993" DECIMAL, 
+	"1994" DECIMAL, 
+	"1995" DECIMAL, 
+	"1996" DECIMAL, 
+	"1997" DECIMAL, 
+	"1998" DECIMAL, 
+	"1999" DECIMAL,  
+	"2000" DECIMAL, 
+	"2001" DECIMAL, 
+	"2002" DECIMAL, 
+	"2003" DECIMAL, 
+	"2004" DECIMAL, 
+	"2005" DECIMAL, 
+	"2006" DECIMAL, 
+	"2007" DECIMAL, 
+	"2008" DECIMAL, 
+	"2009" DECIMAL, 
+	"2010" DECIMAL, 
+	"2011" DECIMAL, 
+	"2012" DECIMAL, 
+	"2013" DECIMAL, 
+	"2014" DECIMAL, 
+	"2015" DECIMAL, 
+	"2016" DECIMAL, 
+	"2017" DECIMAL, 
+	"2018" DECIMAL 
+	
+);
+
+CREATE TABLE re_exports (
+	re_exports VARCHAR PRIMARY KEY, 
+	"1990" DECIMAL, 
+	"1991" DECIMAL, 
+	"1992" DECIMAL, 
+	"1993" DECIMAL, 
+	"1994" DECIMAL, 
+	"1995" DECIMAL, 
+	"1996" DECIMAL, 
+	"1997" DECIMAL, 
+	"1998" DECIMAL, 
+	"1999" DECIMAL,  
+	"2000" DECIMAL, 
+	"2001" DECIMAL, 
+	"2002" DECIMAL, 
+	"2003" DECIMAL, 
+	"2004" DECIMAL, 
+	"2005" DECIMAL, 
+	"2006" DECIMAL, 
+	"2007" DECIMAL, 
+	"2008" DECIMAL, 
+	"2009" DECIMAL, 
+	"2010" DECIMAL, 
+	"2011" DECIMAL, 
+	"2012" DECIMAL, 
+	"2013" DECIMAL, 
+	"2014" DECIMAL, 
+	"2015" DECIMAL, 
+	"2016" DECIMAL, 
+	"2017" DECIMAL, 
+	"2018" DECIMAL 
+	
+);
+
+-- Code to check 1st 100 rows of tables after being created
+
+SELECT * FROM public.indicator_prices
+ORDER BY months ASC LIMIT 100
+
+SELECT * FROM public.imports
+ORDER BY imports ASC LIMIT 100
+
+SELECT * FROM public.re_exports
+ORDER BY re_exports ASC LIMIT 100
