@@ -41,4 +41,38 @@
         });
     </script>
 </body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Imports Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([35, 0], 3);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var countries = [
+            { name: 'USA', latlng: [37.0902, -95.7129], imports: '677,607' },
+            { name: 'Germany', latlng: [51.1657, 10.4515], imports: '392,584' },
+            { name: 'Japan', latlng: [36.2048, 138.2529], imports: '199,005' },
+            { name: 'Italy', latlng: [41.8719, 12.5674], imports: '160,727' },
+            { name: 'France', latlng: [46.6034, 1.8883], imports: '156,299' }
+        ];
+        countries.forEach(function(country) {
+            var marker = L.marker(country.latlng).addTo(map);
+            marker.bindPopup(`<b>${country.name}</b><br>Imports: ${country.imports} Thousand 60-kg bags of coffee`);
+        });
+    </script>
+</body>
 </html>
